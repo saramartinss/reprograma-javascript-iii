@@ -7,7 +7,7 @@ input_busca.addEventListener("keyup", function() {
   .then(function (data) {
     const obj = JSON.parse(data);
     div.innerHTML = "";
-    if (data.items.length > 0) {
+    if (obj.items.length > 0) {
       for(const item of obj.items) {
         div.innerHTML += `<a href="https://www.youtube.com/watch?v=${item.id.videoId}"><div><img src="${item.snippet.thumbnails.default.url}"></div><div><h1>${item.snippet.title}</h1><p>${item.snippet.description}</p></div></a>`;
       }
